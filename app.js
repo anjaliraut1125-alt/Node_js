@@ -1,6 +1,6 @@
-// console.log("hello duniya");
+console.log("hello duniya");
 
-// console.log("start");
+console.log("start");
 
 
 const math = require('./math');

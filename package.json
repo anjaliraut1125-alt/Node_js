@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node express.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/anjaliraut1125-alt/Node_js/issues"
   },
-  "homepage": "https://github.com/anjaliraut1125-alt/Node_js#readme"
+  "homepage": "https://github.com/anjaliraut1125-alt/Node_js#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

@@ -32,8 +32,19 @@ app.delete("/students", (req , res)=>{
 });
 
 
+
+
+
+//Route Parameters
+app.get("/students/:id", (req , res)=>{
+    res.end(req.params.id);
+});
+
+//query parameters
+app.get("/search",(req , res)=>{
+    res.send(req.query.name);
+});
+
 app.listen(5000,()=>{
     console.log("Server is running on port 5000");
 });
-
-

@@ -23,15 +23,48 @@ const app = express();
   
 
 //Route middleware example(single middleware)
-const checkUser = (req , res , next)=> {
-    console.log("Checking User");
-    next();
-};
+// const checkUser = (req , res , next)=> {
+//     console.log("Checking User");
+//     next();
+// };
 
-app.get("/dashboard" , checkUser , (req , res)=> {
-    res.send("Dashboard");
+// app.get("/dashboard" , checkUser , (req , res)=> {
+//     res.send("Dashboard");
+// });
+
+// app.listen(4000);
+
+
+//Authentication Middleware Example
+ const auth = (req , res , next)=>{
+    let isLogin = false;
+
+    if(isLogin){
+        next();
+    }else{
+        res.send("Unauthorized");
+    }
+ };
+
+app.get("/profile" , auth , (req , res)=>{
+    res.send("Profile Page");
+
 });
 
 app.listen(4000);
 
 
+//Build-in middleware
+    //used to READ Data
+
+app.use(express.json());
+
+let students = [
+    { id: 1 , name: "Anjali Singh"},
+    { id: 2 , name: "Vishnu"}
+
+];
+
+app.get("/students" , (req , res)=>{
+    res.json(students);
+});

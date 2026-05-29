@@ -23,6 +23,7 @@ const app = express();
   
 
 //Route middleware example(single middleware)
+
 // const checkUser = (req , res , next)=> {
 //     console.log("Checking User");
 //     next();
@@ -56,6 +57,7 @@ app.listen(4000);
 
 //Build-in middleware
     //used to READ Data
+    //API Data 
 
 app.use(express.json());
 

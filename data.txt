@@ -1,3 +1,14 @@
 Hello Anjali!!! Here Learn Node JS file
 Hello Everyone here this is append file
 Hello Everyone here this is append file
+
+
+//mongo db username and password
+
+anjaliraut1125_db_user
+anjali@2002
+
+mongodb+srv://anjaliraut1125_db_user:anjali@2002@cluster0.7jn8k9z.mongodb.net/?appName=Cluster0
+
+
+mongodb+srv://anjaliraut1125_db_user:anjali@2002@cluster0.4htflsu.mongodb.net/?appName=Cluster0

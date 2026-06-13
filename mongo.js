@@ -19,6 +19,7 @@ mongoose.connect(
 });
 
 app.use(express.json())
+
 const UserSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -39,6 +40,7 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
+// By POST = create user = Naya data add karna
 app.post("/users" , async(req , res)=>{
     try{
         const user = await User.create(req.body);
@@ -49,7 +51,32 @@ app.post("/users" , async(req , res)=>{
     }
 })
 
+//BY GET = find show all users = Data dekhna (read)
+app.get("/users", async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (err) {
+        res.status(500).json(err.message);
+    }
+});
 
+
+//single user
+
+app.get("/users/:id", async(req , res)=>{
+    try{
+        const user = await User.findById(req.params.id);
+        res.json(user);
+    }
+
+    catch{
+        res.json("user not Found");
+    }
+})
+
+
+//
 
 app.listen(8000, ()=>{
     console.log("Server is running on port number 8000.");
